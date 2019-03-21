@@ -76,12 +76,5 @@ export default {
       created() {
         this.getItem();
   },
-    watch: {
-    '$route.params.productId'() {
-      const vm = this;
-      vm.getItem = vm.$route.params.getItem;
-      vm.getProduct();
-    },
-  },
 };
 </script>
