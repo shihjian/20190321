@@ -6,7 +6,7 @@
                 <nav aria-label="breadcrumb" class="pt-4">
                     <ol class="breadcrumb pl-0">
                         <li class="breadcrumb-item"><router-link to="/">首頁</router-link></li>
-                        <li class="breadcrumb-item"><a href="#" @click.prevent="changePage">{{ text }}</a></li>
+                        <li class="breadcrumb-item"><a href="#" >{{ text }}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">{{ item.title }}</li>
                     </ol>
                 </nav>
@@ -22,11 +22,6 @@
                             <div class="h5 text-secondary" v-if="!item.price">NT$ {{ item.origin_price }}</div>
                             <del class="h6 text-secondary" v-if="item.price">NT$ {{ item.origin_price }}</del>
                             <div class="h4" v-if="item.price">NT$ {{ item.price }}</div>
-                            <select name="" class="form-control mt-3" id="" v-model="itemNum">
-                                <option :value="num" v-for="num in 10" :key="num">
-                                    {{ num }} {{ item.unit }}
-                                </option>
-                            </select>
                             <div class="text-dark mt-4">
                                 <i class="mr-2 far fa-clock"></i>
                                 24小時內確認訂單
@@ -39,8 +34,8 @@
                                 <div class="mr-3 d-flex align-items-center">
                                     小計 <strong>{{ itemNum * item.price }}</strong> 元                                    
                                 </div>
-                                <button type="button" class="btn btn-primary btn-sm" @click="addtoCart(item.id, itemNum)">
-                                    <i class="fas fa-spinner fa-spin" v-if="status.loadingItem === item.id"></i>
+                                <button type="button" class="btn btn-primary btn-sm">
+                                    <i class="fas fa-spinner fa-spin" ></i>
                                     加到購物車
                                 </button>
                             </div>
